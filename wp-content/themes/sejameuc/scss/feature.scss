@@ -1,0 +1,75 @@
+
+@import 'colors.scss';
+
+.feature {
+  text-align: left;
+
+  .image {
+    padding-left: 3rem;
+    max-width: 45%;
+
+    &.alternate {
+      padding-left: 0;
+      padding-right: 3rem;
+      order: -1;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      box-shadow: 10px 10px 0 0 $color-green;
+    }
+  }
+
+  h2.feature-heading {
+    font-size: 3em;
+    font-weight: 200;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: $color-white;
+  }
+
+  p.feature-description {
+    font-weight: 400;
+    color: $color-light;
+  }
+}
+
+@media screen and (max-width:991px) {
+  .feature {
+    text-align: center;
+
+    .image {
+      max-width: 800px;
+      padding-left: 0;
+      padding-right: 0;
+      margin-bottom: 3em;
+      order: -1;
+
+      &.alternate { padding-right: 0; }
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  .feature {
+    h2.feature-heading {
+      font-size: 2em;
+    }
+  }
+}
+
+@media screen and (max-width:575px) {
+  .feature {
+    h2.feature-heading {
+      font-size: 1.5em;
+    }
+
+    .image {
+      img {
+        box-shadow: 0 4px 0 0 $color-green;
+      }
+    }
+  }
+}

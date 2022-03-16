@@ -1,0 +1,206 @@
+@import 'colors.scss';
+
+.container.narrow {
+  max-width: 720px;
+}
+
+.entry-content {
+  color: $color-light;
+}
+
+article {
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  &.list-entry-item {
+    h3.entry-title {
+      color: $color-white;
+    }
+
+    h4 {
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: $color-green;
+
+      &.color.post { color: $color-green; }
+      &.color.event { color: $color-pink; }
+      &.color.page { color: $color-teal; }
+    }
+
+    a {
+      img {
+        width: auto;
+        max-height: 200px;
+        transition: all 100ms ease-out;
+        box-shadow: 0 0 0 0 $color-dark;
+      }
+
+      .entry-title {
+        transition: all 100ms ease-out;
+      }
+    }
+
+    a:hover,
+    a:active {
+      img {
+        transform: translateX(-5px) translateY(-5px);
+        box-shadow: 5px 5px 0 0 $color-dark;
+      }
+
+      .entry-title {
+        transform: translateX(-5px) translateY(-5px);
+      }
+    }
+  }
+}
+
+.title-cover {
+  .cover-image {
+    position: relative;
+    overflow: hidden;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .blur {
+      content: '';
+      position: absolute;
+      top: -20px; left: -20px; right: -20px; bottom: -20px;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 5;
+
+      filter: blur(20px);
+      -webkit-filter: blur(20px);
+
+      &.weak {
+        filter: blur(10px);
+        -webkit-filter: blur(10px);
+        opacity: 0.6;
+      }
+    }
+
+    #over-title.container {
+      position: relative;
+      min-height: 300px;
+      z-index: 10;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
+
+      & > h2 {
+        display: inline-block;
+        width: auto;
+        padding: .25em;
+        border-bottom: 1px solid $color-white;
+        font-size: 2.2em;
+        letter-spacing: 0;
+      }
+
+      & > h3 {
+        font-size: 1.6em;
+        letter-spacing: 0;
+      }
+    }
+
+    img {
+      position: relative;
+      max-width: 100%;
+      z-index: 10;
+    }
+  }
+
+  div.back {
+    a {
+      color: $color-light;
+
+      &:hover,
+      &:active {
+        color: $color-white;
+      }
+    }
+  }
+
+  .titles {
+    .entry-title {
+      a {
+        color: $color-white;
+
+        &:hover,
+        &:active {
+          color: $color-light;
+        }
+      }
+    }
+    
+    h2.subtitle {
+      color: $color-light;
+      font-size: 1.5em;
+    }
+
+    h3 {
+      color: $color-light;
+      font-size: 1.1em;
+    }
+  }
+}
+
+.entry-meta {
+  .author {
+    display: block;
+    font-weight: bold;
+    font-size: 1.4em;
+
+    a:hover,
+    a:active {
+      color: $color-green;
+    }
+  }
+
+  .entry-date {
+    display: block;
+    font-size: 1em;
+    color: $color-light
+  }
+
+  .categories,
+  .tags {
+    display: block;
+    font-size: 1em;
+    color: $color-light;
+
+    span {
+      color: $color-white;
+    }
+  }
+
+  .categories a:hover,
+  .categories a:active {
+    color: $color-pink;
+  }
+
+  .tags a:hover,
+  .tags a:active {
+    color: $color-teal;
+  }
+}
+
+.post-edit-link:hover,
+.post-edit-link:active {
+  color: $color-green;
+}
+
+nav.pagination {
+  a {
+    color: $color-light;
+    text-decoration: none;
+
+    &:hover,
+    &:active {
+      color: $color-white;
+    }
+  }
+}

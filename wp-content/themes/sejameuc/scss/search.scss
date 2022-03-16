@@ -1,0 +1,29 @@
+@import 'colors.scss';
+
+form.search-form {
+  input.search-field {
+    padding: .25em .5em;
+    color: $color-light;
+    border: 1px solid $color-light;
+    background: transparent;
+
+    &:hover,
+    &:focus {
+      color: $color-white;
+      border-color: $color-white;
+    }
+  }
+  
+  input.search-submit {
+    padding: .25em .5em;
+    color: $color-dark;
+    border: 1px solid $color-light;
+    background: $color-light;
+
+    &:hover,
+    &:active {
+      background-color: $color-white;
+      border-color: $color-white;
+    }
+  }
+}

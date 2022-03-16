@@ -1,0 +1,52 @@
+@import 'colors.scss';
+@import 'top-menu.scss';
+@import 'bottom.scss';
+@import 'socials.scss';
+@import 'entry-content.scss';
+@import 'call-to-action.scss';
+@import 'gallery.scss';
+
+#wrapper {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding-top: 86px;
+  padding-bottom: 3rem;
+
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: $color-very-dark;
+  color: $color-white;
+}
+
+#container {
+  .container > h2 {
+    width: 100%;
+    font-size: 3em;
+    font-weight: 200;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: $color-white;
+  }
+}
+
+@media screen and (max-width:767px) {
+  #container {
+    .container > h2 {
+      font-size: 2em;
+    }
+  }
+}
+
+@media screen and (max-width:575px) {
+  #wrapper {
+    padding-top: 59px;
+  }
+
+  #container {
+    .container > h2 {
+      font-size: 1.5em;
+    }
+  }
+}

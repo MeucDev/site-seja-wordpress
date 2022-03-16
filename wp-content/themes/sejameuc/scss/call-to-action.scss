@@ -1,0 +1,40 @@
+@import 'colors.scss';
+
+.call-to-action {
+  background-size: 10px 10px;
+  background-image: repeating-linear-gradient(135deg, rgba(193, 212, 49, 0.3) 0, rgba(193, 212, 49, 0.3) 1px, transparent 0, transparent 50%);
+
+  .btn {
+    &.enabled {
+      background-color: $color-green;
+      transition: all 100ms ease-out;
+      box-shadow: 0 0 0 0 $color-very-dark;
+
+      &:hover,
+      &:focus {
+        transform: translateX(-4px) translateY(-4px);
+        box-shadow: 4px 4px 0 0 $color-very-dark;
+      }
+    }
+
+    &.disabled {
+      background-color: $color-very-dark;
+      color: $color-green;
+      opacity: 1;
+    }
+  }
+
+  &.teal {
+    background-image: repeating-linear-gradient(135deg, rgba(15, 186, 178, 0.3) 0, rgba(15, 186, 178, 0.3) 1px, transparent 0, transparent 50%);
+    
+    .btn {
+      &.enabled {
+        background-color: $color-teal;
+      }
+      
+      &.disabled {
+        color: $color-teal;
+      }
+    }
+  }
+}
