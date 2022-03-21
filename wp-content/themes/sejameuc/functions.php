@@ -14,7 +14,10 @@ function sejameuc_setup()
   if (!isset($content_width)) {
     $content_width = 1920;
   }
-  register_nav_menus(array('footer-menu' => esc_html__('Rodapé', 'sejameuc')));
+  register_nav_menus(array(
+    'footer-menu' => 'Rodapé',
+    'socials-menu' => 'Redes Sociais'
+  ));
 
   add_image_size('cropped-thumbnail', 200, 200, true);
   add_image_size('cover', 3840, 360);

@@ -1,4 +1,4 @@
-<footer class="bottom container" role="contentinfo">
+<footer class="bottom container-md" role="contentinfo">
   <hr />
   <?php get_template_part('nav', 'below'); ?>
   <hr class="mb-5" />
@@ -13,13 +13,11 @@
       <!--&middot; <a href="#">Privacy</a>-->
     </div>
     <div class="to-the-top ml-auto mr-0">
-      <a href="/">
       <?php if (is_front_page()) : ?>
-      Voltar ao topo
+      <a href="#">Voltar ao topo</a>
       <?php else : ?>
-      Voltar para página inicial
+      <a href="/">Voltar para página inicial</a>
       <?php endif; ?>
-      </a>
     </div>
   </div>
 </footer>

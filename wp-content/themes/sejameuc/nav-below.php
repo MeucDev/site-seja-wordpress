@@ -2,7 +2,7 @@
   <div class="menu">
   <?php
     wp_nav_menu(array(
-      'menu' => 'footer-menu',
+      'menu' => 'Rodapé',
       'menu_class' => 'd-flex justify-content-start align-items-center mb-0',
       'container' => ''
     ));

@@ -1,5 +1,5 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('list-entry-item mb-4'); ?>>
-  <div class="container narrow">
+  <div class="container-md narrow">
     <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="row">
       <?php if (has_post_thumbnail()) : ?>
       <div class="col-auto me-4"><?php the_post_thumbnail('cropped-thumbnail'); ?></div>

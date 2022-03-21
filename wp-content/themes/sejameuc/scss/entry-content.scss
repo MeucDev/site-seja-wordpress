@@ -1,6 +1,8 @@
 @import 'colors.scss';
 
-.container.narrow {
+.container.narrow,
+.container-md.narrow,
+.container-lg.narrow {
   max-width: 720px;
 }
 
@@ -12,6 +14,52 @@ article {
   a {
     color: inherit;
     text-decoration: none;
+    
+    img {
+      width: auto;
+      max-height: 200px;
+      transition: all 100ms ease-out;
+      box-shadow: 0 0 0 0 $color-dark;
+    }
+
+    .entry-title {
+      transition: all 100ms ease-out;
+    }
+
+    &:hover,
+    &:active {
+      img {
+        transform: translateX(-5px) translateY(-5px);
+        box-shadow: 5px 5px 0 0 $color-dark;
+      }
+
+      .entry-title {
+        transform: translateX(-5px) translateY(-5px);
+      }
+    }
+  }
+
+  .entry-content {
+    a {
+      color: $color-white;
+      text-decoration: underline;
+      
+      &:hover,
+      &:active {
+        color: $color-green;
+      }
+    }
+
+    blockquote {
+      padding: .25em 1em;
+      font-size: 1.4em;
+      line-height: 1.4em;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
 
   &.list-entry-item {
@@ -28,31 +76,6 @@ article {
       &.color.post { color: $color-green; }
       &.color.event { color: $color-pink; }
       &.color.page { color: $color-teal; }
-    }
-
-    a {
-      img {
-        width: auto;
-        max-height: 200px;
-        transition: all 100ms ease-out;
-        box-shadow: 0 0 0 0 $color-dark;
-      }
-
-      .entry-title {
-        transition: all 100ms ease-out;
-      }
-    }
-
-    a:hover,
-    a:active {
-      img {
-        transform: translateX(-5px) translateY(-5px);
-        box-shadow: 5px 5px 0 0 $color-dark;
-      }
-
-      .entry-title {
-        transform: translateX(-5px) translateY(-5px);
-      }
     }
   }
 }
@@ -85,7 +108,9 @@ article {
       }
     }
 
-    #over-title.container {
+    #over-title.container,
+    #over-title.container-md,
+    #over-title.container-lg {
       position: relative;
       min-height: 300px;
       z-index: 10;

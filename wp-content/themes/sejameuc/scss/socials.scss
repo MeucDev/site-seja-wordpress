@@ -1,62 +1,120 @@
 @import 'colors.scss';
 
-.social-link {
-  margin: 1.5rem;
+.socials {
+  list-style: none;
 
   a {
     display: block;
     overflow: hidden;
     border-radius: 50%;
     transition: all 100ms ease-out;
+    background: $color-dark;
     box-shadow: 0 0 0 0 $color-white;
+    font-size: 0;
+    color: transparent;
 
-    &:hover,
-    &:focus {
-      transform: translateX(-10px) translateY(-10px);
-      box-shadow: 10px 10px 0 0 $color-white;
+    &::before {
+      content: '';
+      display: block;
+      margin: 25%;
+      width: 50%;
+      height: 50%;
+      background: center no-repeat;
+    }
+  }
+
+  li.instagram a {
+    background: $color-instagram;
+
+    &::before {
+      background-image: url('../images/icon-instagram.svg');
+    }
+  }
+
+  li.facebook a {
+    background: $color-facebook;
+
+    &::before {
+      background-image: url('../images/icon-facebook.svg');
+    }
+  }
+
+  li.youtube a {
+    background: $color-youtube;
+
+    &::before {
+      background-image: url('../images/icon-youtube.svg');
+    }
+  }
+
+  li.whatsapp a {
+    background: $color-whatsapp;
+
+    &::before {
+      background-image: url('../images/icon-whatsapp.svg');
+    }
+  }
+
+  &.big {
+    li {
+      margin: 1rem;
     }
 
-    span.bg {
-      display: block;
+    a {
       width: 150px;
       height: 150px;
 
-      &.instagram { background: $color-instagram; }
-      &.facebook { background: $color-facebook; }
-      &.youtube { background: $color-youtube; }
-      &.whatsapp { background: $color-whatsapp; }
+      &:hover,
+      &:focus {
+        transform: translateX(-10px) translateY(-10px);
+        box-shadow: 10px 10px 0 0 $color-white;
+      }
+    }
+  }
 
-      img {
-        width: 50%;
-        height: auto;
+  &.small {
+    li {
+      margin: .4rem;
+    }
+
+    a {
+      width: 40px;
+      height: 40px;
+
+      &:hover,
+      &:focus {
+        transform: translateX(-4px) translateY(-4px);
+        box-shadow: 4px 4px 0 0 $color-white;
       }
     }
   }
 }
 
 @media screen and (max-width:1199px) {
-  .social-link {
-    a {
-      span.bg {
+  .socials {
+    &.big {
+      a {
         width: 80px;
         height: 80px;
-      }
 
-      &:hover,
-      &:focus {
-        transform: translateX(-5px) translateY(-5px);
-        box-shadow: 5px 5px 0 0 $color-white;
+        &:hover,
+        &:focus {
+          transform: translateX(-5px) translateY(-5px);
+          box-shadow: 5px 5px 0 0 $color-white;
+        }
       }
     }
   }
 }
 
 @media screen and (max-width:575px) {
-  .social-link {
-    margin: 0.5rem;
+  .socials {
+    &.big {
+      li {
+        margin: .5rem;
+      }
 
-    a {
-      span.bg {
+      a {
         width: 60px;
         height: 60px;
       }

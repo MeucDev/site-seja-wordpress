@@ -1,4 +1,4 @@
-<div class="entry-meta container narrow mt-5">
+<div class="entry-meta container-md narrow mt-5">
   <span class="author vcard" itemprop="author" itemscope itemtype="https://schema.org/Person">
     <span itemprop="name">
       <?php the_author_posts_link(); ?>

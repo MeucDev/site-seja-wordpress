@@ -1,7 +1,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="title-cover">
     <?php get_template_part('entry', 'cover-image'); ?>
-    <div class="container narrow py-5">
+    <div class="container-md narrow py-5">
       <div class="back text-end"><a href="javascript:history.back()">Voltar</a></div>
       <div class="titles">
         <h1 class="entry-title" itemprop="headline">
