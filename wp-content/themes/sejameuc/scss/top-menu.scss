@@ -4,31 +4,100 @@
   position: relative;
 
   nav.navbar {
-    background-color: $color-dark;
+    background-color: transparent;
+    background: linear-gradient($color-very-dark, rgb(30, 30, 29, 0));
     color: $color-white;
-    box-shadow: 0 1px 1px -1px $color-green;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.9);
+    transition: background-color 200ms linear;
+
+    &.solid {
+      background-color: $color-very-dark;
+      box-shadow: 0 1px 1px -1px $color-green;
+    }
 
     .navbar-brand {
-      margin-right: 0;
-
       img {
         height: 60px;
       }
-    }
-
-    a.nav-link {
-      margin-bottom: 1em;
     }
     
     button {
       border: 0;
       border-radius: 0;
     }
+
+    ul.socials {
+      padding: 0;
+      margin: auto;
+    }
+
+    ul.navbar-nav {
+      width: 100%;
+
+      li {
+        margin: 0 1em;
+
+        a {
+          position: relative;
+          display: inline-block;
+          color: $color-white;
+          font-size: 0.8em;
+          text-transform: uppercase;
+          text-decoration: none;
+          letter-spacing: .1em;
+          transition: color 100ms linear;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%; right: 50%;
+            height: 1px;
+            transition: all 120ms linear;
+          }
+
+          &:hover,
+          &:active {
+            &::after {
+              left: 0; right: 0;
+            }
+          }
+        }
+
+        &:nth-child(3n) a {
+          &::after { background-color: $color-green; }
+          &:hover,
+          &:active { color: $color-green; }
+        }
+
+        &:nth-child(3n+1) a {
+          &::after { background-color: $color-pink; }
+          &:hover,
+          &:active { color: $color-pink; }
+        }
+
+        &:nth-child(3n+2) a {
+          &::after { background-color: $color-teal; }
+          &:hover,
+          &:active { color: $color-teal; }
+        }
+      }
+    }
   }
 }
 
 body.admin-bar .top-menu nav.navbar.fixed-top {
   top: 32px;
+}
+
+@media screen and (max-width:991px) {
+  .top-menu {
+    nav.navbar {
+      ul.navbar-nav li {
+        margin: .5em auto;
+      }
+    }
+  }
 }
 
 @media screen and (max-width:782px) {

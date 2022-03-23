@@ -19,7 +19,8 @@
       margin: 25%;
       width: 50%;
       height: 50%;
-      background: center no-repeat;
+      background: center no-repeat $color-white;
+      transition: background-color 100ms linear;
     }
   }
 
@@ -27,7 +28,8 @@
     background: $color-instagram;
 
     &::before {
-      background-image: url('../images/icon-instagram.svg');
+      -webkit-mask-image: url('../images/icon-instagram.svg');
+      mask-image: url('../images/icon-instagram.svg');
     }
   }
 
@@ -35,7 +37,8 @@
     background: $color-facebook;
 
     &::before {
-      background-image: url('../images/icon-facebook.svg');
+      -webkit-mask-image: url('../images/icon-facebook.svg');
+      mask-image: url('../images/icon-facebook.svg');
     }
   }
 
@@ -43,7 +46,8 @@
     background: $color-youtube;
 
     &::before {
-      background-image: url('../images/icon-youtube.svg');
+      -webkit-mask-image: url('../images/icon-youtube.svg');
+      mask-image: url('../images/icon-youtube.svg');
     }
   }
 
@@ -51,7 +55,8 @@
     background: $color-whatsapp;
 
     &::before {
-      background-image: url('../images/icon-whatsapp.svg');
+      -webkit-mask-image: url('../images/icon-whatsapp.svg');
+      mask-image: url('../images/icon-whatsapp.svg');
     }
   }
 
@@ -73,19 +78,30 @@
   }
 
   &.small {
-    li {
-      margin: .4rem;
-    }
-
     a {
       width: 40px;
       height: 40px;
+      background-color: transparent !important;
+    }
 
-      &:hover,
-      &:focus {
-        transform: translateX(-4px) translateY(-4px);
-        box-shadow: 4px 4px 0 0 $color-white;
-      }
+    li.instagram {
+      a:hover::before,
+      a:active::before { background-color: $color-instagram; }
+    }
+    
+    li.facebook {
+      a:hover::before,
+      a:active::before { background-color: $color-facebook; }
+    }
+    
+    li.youtube {
+      a:hover::before,
+      a:active::before { background-color: $color-youtube; }
+    }
+    
+    li.whatsapp {
+      a:hover::before,
+      a:active::before { background-color: $color-whatsapp; }
     }
   }
 }

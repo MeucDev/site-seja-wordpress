@@ -4,6 +4,7 @@ add_action('after_setup_theme', 'sejameuc_setup');
 function sejameuc_setup()
 {
   load_theme_textdomain('sejameuc', get_template_directory() . '/languages');
+  add_theme_support('menus');
   add_theme_support('title-tag');
   add_theme_support('post-thumbnails');
   add_theme_support('responsive-embeds');
@@ -15,6 +16,7 @@ function sejameuc_setup()
     $content_width = 1920;
   }
   register_nav_menus(array(
+    'top-menu' => 'Menu Topo',
     'footer-menu' => 'Rodapé',
     'socials-menu' => 'Redes Sociais'
   ));

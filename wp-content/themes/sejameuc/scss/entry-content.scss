@@ -81,63 +81,6 @@ article {
 }
 
 .title-cover {
-  .cover-image {
-    position: relative;
-    overflow: hidden;
-
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    .blur {
-      content: '';
-      position: absolute;
-      top: -20px; left: -20px; right: -20px; bottom: -20px;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: 5;
-
-      filter: blur(20px);
-      -webkit-filter: blur(20px);
-
-      &.weak {
-        filter: blur(10px);
-        -webkit-filter: blur(10px);
-        opacity: 0.6;
-      }
-    }
-
-    #over-title.container,
-    #over-title.container-md,
-    #over-title.container-lg {
-      position: relative;
-      min-height: 300px;
-      z-index: 10;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-
-      & > h2 {
-        display: inline-block;
-        width: auto;
-        padding: .25em;
-        border-bottom: 1px solid $color-white;
-        font-size: 2.2em;
-        letter-spacing: 0;
-      }
-
-      & > h3 {
-        font-size: 1.6em;
-        letter-spacing: 0;
-      }
-    }
-
-    img {
-      position: relative;
-      max-width: 100%;
-      z-index: 10;
-    }
-  }
-
   div.back {
     a {
       color: $color-light;
