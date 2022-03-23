@@ -28,11 +28,31 @@
     text-transform: uppercase;
     letter-spacing: .1em;
     color: $color-white;
+
+    a {
+      text-decoration: none;
+      color: inherit;
+
+      &:hover,
+      &:active {
+        color: $color-light;
+      }
+    }
   }
 
-  p.feature-description {
+  .feature-description {
     font-weight: 400;
     color: $color-light;
+
+    a {
+      text-decoration: none;
+      color: $color-white;
+
+      &:hover,
+      &:active {
+        color: $color-light;
+      }
+    }
   }
 }
 

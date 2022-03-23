@@ -27,3 +27,16 @@ form.search-form {
     }
   }
 }
+
+@media screen and (max-width:575px) {
+  form.search-form {
+    width: 100%;
+
+    label,
+    input.search-field,
+    input.search-submit {
+      display: block;
+      width: 100%;
+    }
+  }
+}

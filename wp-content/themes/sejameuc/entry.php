@@ -4,7 +4,7 @@
       <?php if (has_post_thumbnail()) : ?>
       <div class="col-auto me-4"><?php the_post_thumbnail('cropped-thumbnail'); ?></div>
       <?php endif; ?>
-      <div class="col entry-content">
+      <div class="col-12 col-md entry-content text-start">
         <h3 class="entry-title pt-2"><?php the_title(); ?></h3>
         <?php
           $type = get_post_type();

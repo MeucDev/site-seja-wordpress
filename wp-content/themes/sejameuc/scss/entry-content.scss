@@ -229,3 +229,13 @@ nav.pagination {
     }
   }
 }
+
+@media screen and (max-width:767px) {
+  article.list-entry-item {
+    img {
+      width: auto;
+      height: 120px;
+      margin-bottom: 1em;
+    }
+  }
+}

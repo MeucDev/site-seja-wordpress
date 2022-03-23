@@ -1,6 +1,6 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="title-cover">
-    <?php get_template_part('entry', 'cover-image'); ?>
+    <?php get_template_part('entry', 'cover-image-or-video'); ?>
     <div class="container-md narrow py-5">
       <div class="back text-end"><a href="javascript:history.back()">Voltar</a></div>
       <div class="titles">

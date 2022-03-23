@@ -6,30 +6,66 @@ footer.bottom {
   
   nav {
     .menu ul {
+      padding: 0;
       list-style: none;
 
       li {
         margin-right: 2em;
+
+        &:last-child {
+          margin-right: 0;
+        }
       }
     }
   }
 
   a {
+    position: relative;
+    display: inline-block;
     text-decoration: none;
     color: $color-light;
+    transition: color 120ms linear;
 
-    &:hover {
+    &:not(.custom)::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%; right: 50%;
+      height: 1px;
+      background-color: $color-light;
+      transition: all 120ms linear;
+    }
+
+    &:hover,
+    &:active {
       color: $color-white;
+
+      &:not(.custom)::after {
+        left: 0; right: 0;
+        background-color: $color-white;
+      }
+    }
+  }
+}
+
+@media screen and (max-width:991px) {
+  footer.bottom {
+    nav .menu ul li a {
+      padding: 0.5em;
+    }
+  }
+}
+
+@media screen and (max-width:767px) {
+  footer.bottom {
+    nav .menu ul li {
+      margin-right: 0;
     }
   }
 }
 
 @media screen and (max-width:575px) {
-  .bottom {
-    .d-flex {
-      flex-direction: column;
-    }
-
+  footer.bottom {
     .to-the-top {
       margin-top: 2em;
     }

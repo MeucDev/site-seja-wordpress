@@ -220,12 +220,16 @@ add_action('wp_enqueue_scripts', 'register_scripts');
 function register_scripts() {
   wp_enqueue_script('popper.js', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js');
   wp_enqueue_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js');
+  wp_enqueue_script('photoswipe', get_template_directory_uri() . '/photoswipe/photoswipe.min.js');
+  wp_enqueue_script('photoswipe-ui', get_template_directory_uri() . '/photoswipe/photoswipe-ui-default.min.js');
 }
 
 add_action('wp_enqueue_scripts', 'register_styles');
 function register_styles() {
   wp_enqueue_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css');
   wp_enqueue_style('font.montserrat', 'https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;700&display=swap');
+  wp_enqueue_style('photoswipe', get_template_directory_uri() . '/photoswipe/photoswipe.css');
+  wp_enqueue_style('photoswipe-ui', get_template_directory_uri() . '/photoswipe/default-skin.css');
 }
 
 function get_relative_path($path) {

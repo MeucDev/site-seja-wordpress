@@ -11,16 +11,44 @@
 </div>
 <?php endif; ?>
 <main id="content" role="main" class="container-md">
+  <?php $eventos = get_page_by_path('seja-eventos', OBJECT); ?>
+  <div class="row feature py-5">
+    <div class="col-lg d-flex flex-column justify-content-center">
+      <h2 class="feature-heading mb-4">
+        <?=$eventos->post_title;?>
+      </h2>
+      <div class="feature-description entry-content">
+        <?=apply_filters('the_content', $eventos->post_content);?>
+      </div>
+    </div>
+    <div v-if="image" class="col-lg-auto image">
+      <img src="<?=get_the_post_thumbnail_url($eventos, 'full');?>" />
+    </div>
+  </div>
+  <?php $capacitacao = get_page_by_path('seja-capacitacao', OBJECT); ?>
+  <div class="row feature py-5">
+    <div class="col-lg d-flex flex-column justify-content-center">
+      <h2 class="feature-heading mb-4">
+      <?=$capacitacao->post_title;?>
+      </h2>
+      <div class="feature-description entry-content">
+        <?=apply_filters('the_content', $capacitacao->post_content);?>
+      </div>
+    </div>
+    <div v-if="image" class="col-lg-auto image alternate">
+      <img src="<?=get_the_post_thumbnail_url($capacitacao, 'full');?>" />
+    </div>
+  </div>
   <div class="container-md narrow">
     <div class="row feature py-5">
-      <h2 class="feature-heading text-center pb-5">Próximos Eventos</h2>
+      <h2 class="feature-heading text-center pb-5"><a href="eventos">Próximos Eventos</a></h2>
       <?php
         $args = array(
           'post_type'       => 'event',
           'posts_per_page'  => 3,
           'order'           => 'ASC',
           'meta_key'        => 'start_date',
-          'meta_value'      => date( "Ymd" ),
+          'meta_value'      => date('Ymd'),
           'meta_compare'    => '>=',
         );
 
@@ -38,37 +66,9 @@
       <?php endif; ?>
     </div>
   </div>
-  <?php $capacitacao = get_page_by_path('seja-capacitacao', OBJECT); ?>
-  <div class="row feature py-5">
-    <div class="col-lg d-flex flex-column justify-content-center">
-      <h2 class="feature-heading mb-4">
-      <?=$capacitacao->post_title;?>
-      </h2>
-      <p class="feature-description">
-        <?=apply_filters('the_content', $capacitacao->post_content);?>
-      </p>
-    </div>
-    <div v-if="image" class="col-lg-auto image alternate">
-      <img src="<?=get_the_post_thumbnail_url($capacitacao, 'full');?>" />
-    </div>
-  </div>
-  <?php $eventos = get_page_by_path('seja-eventos', OBJECT); ?>
-  <div class="row feature py-5">
-    <div class="col-lg d-flex flex-column justify-content-center">
-      <h2 class="feature-heading mb-4">
-        <?=$eventos->post_title;?>
-      </h2>
-      <p class="feature-description">
-        <?=apply_filters('the_content', $eventos->post_content);?>
-      </p>
-    </div>
-    <div v-if="image" class="col-lg-auto image">
-      <img src="<?=get_the_post_thumbnail_url($eventos, 'full');?>" />
-    </div>
-  </div>
   <div class="container-md narrow">
     <div class="row feature py-5">
-      <h2 class="feature-heading text-center pb-5">Blog</h2>
+      <h2 class="feature-heading text-center pb-5"><a href="blog">Blog</a></h2>
       <?php
         $args = array(
           'post_type'       => 'post',
