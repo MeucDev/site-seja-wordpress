@@ -1,10 +1,10 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class('list-entry-item mb-4'); ?>>
-  <div class="container-md narrow">
-    <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="row">
+<div class="col mb-3">
+  <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="list-entry-item">
+    <article id="post-<?php the_ID(); ?>" <?php post_class('p-3 pb-1'); ?>>
       <?php if (has_post_thumbnail()) : ?>
-      <div class="col-auto me-4"><?php the_post_thumbnail('cropped-thumbnail'); ?></div>
+      <?php the_post_thumbnail('cropped-thumbnail'); ?>
       <?php endif; ?>
-      <div class="col-12 col-md entry-content text-start">
+      <div class="entry-content text-start">
         <h3 class="entry-title pt-2"><?php the_title(); ?></h3>
         <?php
           $type = get_post_type();
@@ -36,6 +36,6 @@
         </h4>
         <?php get_template_part('entry', 'summary'); ?>
       </div>
-    </a>
-  </div>
-</article>
+    </article>
+  </a>
+</div>

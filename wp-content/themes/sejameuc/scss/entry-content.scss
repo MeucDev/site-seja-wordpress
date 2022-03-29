@@ -8,35 +8,51 @@
 
 .entry-content {
   color: $color-light;
+
+  &#home-content {
+    font-size: 1.3em;
+  }
+}
+
+.list-entry-item {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  background-color: $color-dark;
+  transition: background-color 120ms linear;
+
+  &[href]:hover,
+  &[href]:active {
+    background-color: $color-dark-50;
+  }
+
+  article {
+    img {
+      width: 100%;
+      height: auto;
+    }
+
+    h3.entry-title {
+      color: $color-white;
+    }
+
+    h4 {
+      font-size: 0.8em;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: $color-green;
+
+      &.color.post { color: $color-green; }
+      &.color.event { color: $color-pink; }
+      &.color.page { color: $color-teal; }
+    }
+  }
 }
 
 article {
   a {
     color: inherit;
     text-decoration: none;
-    
-    img {
-      width: auto;
-      max-height: 200px;
-      transition: all 100ms ease-out;
-      box-shadow: 0 0 0 0 $color-dark;
-    }
-
-    .entry-title {
-      transition: all 100ms ease-out;
-    }
-
-    &:hover,
-    &:active {
-      img {
-        transform: translateX(-5px) translateY(-5px);
-        box-shadow: 5px 5px 0 0 $color-dark;
-      }
-
-      .entry-title {
-        transform: translateX(-5px) translateY(-5px);
-      }
-    }
   }
 
   .entry-content {
@@ -59,23 +75,6 @@ article {
     img {
       max-width: 100%;
       height: auto;
-    }
-  }
-
-  &.list-entry-item {
-    h3.entry-title {
-      color: $color-white;
-    }
-
-    h4 {
-      font-size: 0.8em;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: $color-green;
-
-      &.color.post { color: $color-green; }
-      &.color.event { color: $color-pink; }
-      &.color.page { color: $color-teal; }
     }
   }
 }
@@ -169,16 +168,6 @@ nav.pagination {
     &:hover,
     &:active {
       color: $color-white;
-    }
-  }
-}
-
-@media screen and (max-width:767px) {
-  article.list-entry-item {
-    img {
-      width: auto;
-      height: 120px;
-      margin-bottom: 1em;
     }
   }
 }

@@ -21,7 +21,7 @@ function sejameuc_setup()
     'socials-menu' => 'Redes Sociais'
   ));
 
-  add_image_size('cropped-thumbnail', 200, 200, true);
+  add_image_size('cropped-thumbnail', 300, 200, true);
   add_image_size('cover', 3840, 360);
 }
 

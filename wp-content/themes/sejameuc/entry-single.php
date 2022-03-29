@@ -12,5 +12,9 @@
     </div>
   </div>
   <?php get_template_part('entry', 'content'); ?>
-  <?php get_template_part('entry', 'meta'); ?>
+  <?php
+    if (!is_page()) {
+      get_template_part('entry', 'meta');
+    }
+  ?>
 </article>

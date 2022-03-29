@@ -10,84 +10,101 @@
   </video>
 </div>
 <?php endif; ?>
-<main id="content" role="main" class="container-md">
-  <?php $eventos = get_page_by_path('seja-eventos', OBJECT); ?>
-  <div class="row feature py-5">
-    <div class="col-lg d-flex flex-column justify-content-center">
-      <h2 class="feature-heading mb-4">
-        <?=$eventos->post_title;?>
-      </h2>
-      <div class="feature-description entry-content">
-        <?=apply_filters('the_content', $eventos->post_content);?>
-      </div>
-    </div>
-    <div v-if="image" class="col-lg-auto image">
-      <img src="<?=get_the_post_thumbnail_url($eventos, 'full');?>" />
-    </div>
-  </div>
-  <?php $capacitacao = get_page_by_path('seja-capacitacao', OBJECT); ?>
-  <div class="row feature py-5">
-    <div class="col-lg d-flex flex-column justify-content-center">
-      <h2 class="feature-heading mb-4">
-      <?=$capacitacao->post_title;?>
-      </h2>
-      <div class="feature-description entry-content">
-        <?=apply_filters('the_content', $capacitacao->post_content);?>
-      </div>
-    </div>
-    <div v-if="image" class="col-lg-auto image alternate">
-      <img src="<?=get_the_post_thumbnail_url($capacitacao, 'full');?>" />
-    </div>
-  </div>
+<main id="content" role="main">
   <div class="container-md narrow">
-    <div class="row feature py-5">
-      <h2 class="feature-heading text-center pb-5"><a href="eventos">Próximos Eventos</a></h2>
-      <?php
-        $args = array(
-          'post_type'       => 'event',
-          'posts_per_page'  => 3,
-          'order'           => 'ASC',
-          'meta_key'        => 'start_date',
-          'meta_value'      => date('Ymd'),
-          'meta_compare'    => '>=',
-        );
+    <div id="home-content" class="entry-content text-center py-5">
+      <?php the_content(); ?>
+    </div>
+  </div>
+  <div class="features d-flex flex-column flex-lg-row">
+    <?php $capacitacao = get_page_by_path('seja-capacitacao', OBJECT); ?>
+    <a href="<?=get_permalink($capacitacao);?>" class="feature flex-fill">
+      <div class="image single">
+        <div class="content" style="background-image:url('<?=get_the_post_thumbnail_url($capacitacao, 'large');?>')"></div>
+        <h2 class="feature-title"><?=$capacitacao->post_title;?></h2>
+      </div>
+    </a>
+    <?php $eventos = get_page_by_path('seja-eventos', OBJECT); ?>
+    <a href="/eventos" class="feature flex-fill">
+      <div class="image single">
+        <div class="content" style="background-image:url('<?=get_the_post_thumbnail_url($eventos, 'large');?>')"></div>
+        <h2 class="feature-title"><?=$eventos->post_title;?></h2>
+      </div>
+    </a>
+  </div>
+  <div class="features d-flex flex-column flex-lg-row">
+    <div class="feature flex-fill">
+      <div class="image">
+        <div class="content" style="background-image:url('<?=get_template_directory_uri();?>/images/background-events.jpg')"></div>
+        <h2 class="feature-title">Próximos Eventos</h2>
+      </div>
+      <div class="feature-content pt-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-3">
+        <?php
+          $args = array(
+            'post_type'       => 'event',
+            'posts_per_page'  => 3,
+            'order'           => 'ASC',
+            'meta_key'        => 'start_date',
+            'meta_value'      => date('Ymd'),
+            'meta_compare'    => '>=',
+          );
 
-        $the_query = new WP_Query($args);
-        if ($the_query->have_posts()) :
+          $the_query = new WP_Query($args);
           while ($the_query->have_posts()) :
             $the_query->the_post();
             get_template_part('entry');
           endwhile; 
           wp_reset_postdata();
-      ?>
-      <nav class="pagination d-flex justify-content-center align-items-center">
-        <a href="eventos" class="m-auto">Todos os eventos</a>
-      </nav>
-      <?php endif; ?>
+        ?>
+        </div>
+      </div>
+      <div class="feature-footer">
+        <a href="/eventos" class="p-3">Todos os eventos</a>
+      </div>
     </div>
-  </div>
-  <div class="container-md narrow">
-    <div class="row feature py-5">
-      <h2 class="feature-heading text-center pb-5"><a href="blog">Blog</a></h2>
-      <?php
-        $args = array(
-          'post_type'       => 'post',
-          'posts_per_page'  => 3
-        );
+    <div class="feature flex-fill">
+      <div class="image">
+        <div class="content" style="background-image:url('<?=get_template_directory_uri();?>/images/background-blog.jpg')"></div>
+        <h2 class="feature-title">Blog</h2>
+      </div>
+      <div class="feature-content pt-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-3">
+        <?php
+          $args = array(
+            'post_type'       => 'post',
+            'posts_per_page'  => 3
+          );
 
-        $the_query = new WP_Query($args);
-        if ($the_query->have_posts()) :
+          $the_query = new WP_Query($args);
           while ($the_query->have_posts()) :
             $the_query->the_post();
             get_template_part('entry');
           endwhile; 
           wp_reset_postdata();
-      ?>
+        ?>
+        </div>
+      </div>
+      <div class="feature-footer">
+        <a href="/blog" class="p-3">Todas as postagens</a>
+      </div>
     </div>
-    <nav class="pagination d-flex justify-content-center align-items-center">
-      <a href="blog" class="m-auto">Todas as postagens</a>
-    </nav>
-    <?php endif; ?>
+  </div>
+  <div class="features d-flex flex-column flex-lg-row">
+    <?php $voluntario = get_page_by_path('seja-voluntario', OBJECT); ?>
+    <a href="<?=get_permalink($voluntario);?>" class="feature flex-fill">
+      <div class="image single">
+        <div class="content" style="background-image:url('<?=get_the_post_thumbnail_url($voluntario, 'large');?>')"></div>
+        <h2 class="feature-title"><?=$voluntario->post_title;?></h2>
+      </div>
+    </a>
+    <?php $colaborador = get_page_by_path('seja-colaborador', OBJECT); ?>
+    <a href="<?=get_permalink($colaborador);?>" class="feature flex-fill">
+      <div class="image single">
+        <div class="content" style="background-image:url('<?=get_the_post_thumbnail_url($colaborador, 'large');?>')"></div>
+        <h2 class="feature-title"><?=$colaborador->post_title;?></h2>
+      </div>
+    </a>
   </div>
 </main>
 <?php get_template_part('socials'); ?>
