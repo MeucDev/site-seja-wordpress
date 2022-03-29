@@ -6,9 +6,19 @@
         the_post();
         get_template_part('entry', 'single');
 
-        if (comments_open() && !post_password_required()) {
-          comments_template('', true);
-        }
+        $teamMembers = get_field('team');
+        if (!empty($teamMembers) && sizeof($teamMembers) > 0) : ?>
+        <div class="container-md narrow mt-5">
+          <h3>Nosso time</h3>
+          <ul class="team-members">
+            <?php
+              foreach ($teamMembers as $member) :
+                get_template_part('entry', 'team-member', $member);
+              endforeach;
+            ?>
+          </ul>
+        </div>
+        <?php endif;
       endwhile;
     endif;
   ?>

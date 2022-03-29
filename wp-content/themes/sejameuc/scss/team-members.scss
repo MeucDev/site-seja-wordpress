@@ -1,0 +1,21 @@
+@import 'colors.scss';
+
+ul.team-members {
+  list-style: none;
+  padding: 0;
+
+  li.member {
+    .picture {
+      border-radius: 50%;
+      width: 120px;
+      height: 120px;
+      background-color: $color-dark;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

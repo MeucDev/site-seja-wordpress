@@ -61,6 +61,15 @@
     }
   }
 
+  li.email a {
+    background: $color-light;
+
+    &::before {
+      -webkit-mask-image: url('../images/icon-email.svg');
+      mask-image: url('../images/icon-email.svg');
+    }
+  }
+
   &.big {
     li {
       margin: 1rem;
@@ -103,6 +112,11 @@
     li.whatsapp {
       a:hover::before,
       a:active::before { background-color: $color-whatsapp; }
+    }
+    
+    li.email {
+      a:hover::before,
+      a:active::before { background-color: $color-light; }
     }
   }
 }
