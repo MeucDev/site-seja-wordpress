@@ -6,6 +6,7 @@ form.search-form {
     color: $color-light;
     border: 1px solid $color-light;
     background: transparent;
+    transition: all 120ms linear;
 
     &:hover,
     &:focus {
@@ -19,6 +20,7 @@ form.search-form {
     color: $color-dark;
     border: 1px solid $color-light;
     background: $color-light;
+    transition: all 120ms linear;
 
     &:hover,
     &:active {
