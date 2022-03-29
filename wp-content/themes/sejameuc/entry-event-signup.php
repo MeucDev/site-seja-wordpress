@@ -5,6 +5,7 @@
   if (empty($signupLink)) return;
 ?>
 <div class="call-to-action mb-5 p-5 d-flex justify-content-center">
+  <div class="cover-image signup"></div>
   <?php if ($signupOpen) : ?>
   <a class="btn btn-lg enabled" href="<?=$signupLink;?>" target="_blank">Inscreva-se</a>
   <?php else : ?>
