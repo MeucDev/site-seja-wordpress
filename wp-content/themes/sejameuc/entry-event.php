@@ -8,7 +8,10 @@
           <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" rel="bookmark"><?php the_title(); ?></a>
         </h1>
         <h2 class="subtitle mb-3"><?php the_field('subtitle'); ?></h2>
-        <h3 class="entry-title"><?php the_field('location'); ?> - <?php the_field('start_date'); ?> a <?php the_field('end_date'); ?></h3>
+        <h3 class="entry-title">
+          <?php the_field('location'); ?><br/>
+          <?php the_field('start_date'); ?> a <?php the_field('end_date'); ?>
+        </h3>
       </div>
     </div>
   </div>

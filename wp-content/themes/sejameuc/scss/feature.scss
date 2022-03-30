@@ -104,6 +104,12 @@
   .features {
     .feature {
       .image {
+        min-height: 160px;
+
+        .feature-title {
+          font-size: 2em;
+        }
+
         &.single {
           min-height: 400px;
 
@@ -119,8 +125,14 @@
 @media screen and (max-width:991px) {
   .features {
     .feature {
-      .image.single {
-        min-height: 240px;
+      width: auto;
+
+      .image{
+        min-height: 140px;
+
+        &.single {
+          min-height: 240px;
+        }
       }
     }
   }
@@ -129,10 +141,22 @@
 @media screen and (max-width:767px) {
   .features {
     .feature {
-      .image.single {
+      .image {
+        min-height: 100px;
+
         .feature-title {
-          font-size: 2em;
+          font-size: 1.7em;
         }
+
+        &.single {
+          .feature-title {
+            font-size: 2em;
+          }
+        }
+      }
+
+      .feature-footer a {
+        font-size: 1em;
       }
     }
   }

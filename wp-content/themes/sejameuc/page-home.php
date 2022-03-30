@@ -39,7 +39,7 @@
         <h2 class="feature-title">Próximos Eventos</h2>
       </div>
       <div class="feature-content pt-4">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-2 row-cols-xxl-3">
         <?php
           $args = array(
             'post_type'       => 'event',
@@ -69,7 +69,7 @@
         <h2 class="feature-title">Blog</h2>
       </div>
       <div class="feature-content pt-4">
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-2 row-cols-xl-3">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-2 row-cols-xxl-3">
         <?php
           $args = array(
             'post_type'       => 'post',

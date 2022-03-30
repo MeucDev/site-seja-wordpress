@@ -10,7 +10,7 @@
     </div>
   </div>
   <div class="container-md">
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
     <?php if (have_posts()) : ?>
       <?php while (have_posts()) : the_post(); ?>
         <?php get_template_part('entry'); ?>
