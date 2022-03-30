@@ -15,6 +15,7 @@
   <?php get_template_part('entry', 'event-signup'); ?>
   <?php get_template_part('entry', 'content'); ?>
   <?php get_template_part('entry', 'event-gallery-link'); ?>
+  <?php get_template_part('entry', 'files'); ?>
   <div class="entry-meta container-md narrow mt-5">
     <?php
       $categories = get_the_terms(null, 'event-category');

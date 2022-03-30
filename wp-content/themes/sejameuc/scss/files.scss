@@ -1,0 +1,37 @@
+@import 'colors.scss';
+
+.entry-files {
+  list-style: none;
+  padding: 0;
+
+  .file-item {
+    .extension {
+      display: block;
+      min-width: 80px;
+      padding: .75em .5em;
+      font-size: 1.2em;
+      text-align: center;
+      text-transform: uppercase;
+      color: $color-white;
+      background-color: $color-dark;
+      transition: background-color 120ms linear;
+    }
+
+    .name {
+      font-size: 1.1em;
+      color: $color-white;
+      transition: color 120ms linear;
+    }
+
+    &:hover,
+    &:active {
+      .extension {
+        background-color: $color-green;
+      }
+  
+      .name {
+        color: $color-green;
+      }
+    }
+  }
+}
