@@ -136,7 +136,7 @@ function sejameuc_image_insert_override($sizes)
   unset($sizes['large']);
   unset($sizes['1536x1536']);
   unset($sizes['2048x2048']);
-  return array_merge($sizes, $new_sizes);
+  return $sizes;
 }
 
 add_action('widgets_init', 'sejameuc_widgets_init');
