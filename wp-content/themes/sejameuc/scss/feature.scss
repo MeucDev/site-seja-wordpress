@@ -82,17 +82,18 @@
       a {
         display: block;
         box-sizing: border-box;
+        border: 2px solid $color-light;
         text-align: center;
         font-size: 1.2em;
         text-transform: uppercase;
         letter-spacing: 0.1em;
-        background-color: $color-dark;
         transition: all 120ms linear;
 
         &[href]:hover,
         &[href]:active {
           letter-spacing: 0.2em;
-          background-color: $color-dark-50;
+          color: $color-light;
+          border-color: $color-dark;
         }
       }
     }

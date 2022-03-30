@@ -18,15 +18,13 @@
   display: block;
   color: inherit;
   text-decoration: none;
-  background-color: $color-dark;
-  transition: background-color 120ms linear;
-
-  &[href]:hover,
-  &[href]:active {
-    background-color: $color-dark-50;
-  }
+  box-sizing: border-box;
+  border: 2px solid $color-light;
+  transition: border-color 120ms linear;
 
   article {
+    transition: opacity 120ms linear;
+
     img {
       width: 100%;
       height: auto;
@@ -45,6 +43,15 @@
       &.color.post { color: $color-green; }
       &.color.event { color: $color-pink; }
       &.color.page { color: $color-teal; }
+    }
+  }
+
+  &[href]:hover,
+  &[href]:active {
+    border-color: $color-dark;
+
+    article {
+      opacity: .7;
     }
   }
 }
