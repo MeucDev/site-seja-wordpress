@@ -8,10 +8,6 @@
 
 .entry-content {
   color: $color-light;
-
-  &#home-content {
-    font-size: 1.3em;
-  }
 }
 
 .list-entry-item {
@@ -176,14 +172,6 @@ nav.pagination {
     &:hover,
     &:active {
       color: $color-white;
-    }
-  }
-}
-
-@media screen and (max-width:768px) {
-  .entry-content {
-    &#home-content {
-      font-size: 1em;
     }
   }
 }

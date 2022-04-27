@@ -11,11 +11,6 @@
 </div>
 <?php endif; ?>
 <main id="content" role="main">
-  <div class="container-md narrow">
-    <div id="home-content" class="entry-content text-center py-5">
-      <?php the_content(); ?>
-    </div>
-  </div>
   <div class="features d-flex flex-column flex-lg-row">
     <?php $capacitacao = get_page_by_path('seja-capacitacao', OBJECT); ?>
     <a href="<?=get_permalink($capacitacao);?>" class="feature flex-fill">
