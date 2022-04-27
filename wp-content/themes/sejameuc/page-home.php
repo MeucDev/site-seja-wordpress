@@ -32,6 +32,7 @@
       </div>
     </a>
   </div>
+  <?php if (false) : ?>
   <div class="features d-flex flex-column flex-lg-row">
     <div class="feature flex-fill">
       <div class="image">
@@ -90,6 +91,7 @@
       </div>
     </div>
   </div>
+  <?php endif; ?>
   <div class="features d-flex flex-column flex-lg-row">
     <?php $voluntario = get_page_by_path('seja-voluntario', OBJECT); ?>
     <a href="<?=get_permalink($voluntario);?>" class="feature flex-fill">
