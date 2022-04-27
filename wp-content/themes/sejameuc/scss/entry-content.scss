@@ -179,3 +179,11 @@ nav.pagination {
     }
   }
 }
+
+@media screen and (max-width:768px) {
+  .entry-content {
+    &#home-content {
+      font-size: 1em;
+    }
+  }
+}
