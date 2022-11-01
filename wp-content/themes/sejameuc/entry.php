@@ -34,7 +34,6 @@
           }
         ?>
         </h4>
-        <?php get_template_part('entry', 'summary'); ?>
       </div>
     </article>
   </a>

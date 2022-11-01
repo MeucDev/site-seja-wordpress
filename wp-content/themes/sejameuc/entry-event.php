@@ -10,7 +10,7 @@
         <h2 class="subtitle mb-3"><?php the_field('subtitle'); ?></h2>
         <h3 class="entry-title">
           <?php the_field('location'); ?><br/>
-          <?php the_field('start_date'); ?> a <?php the_field('end_date'); ?>
+          <?php the_field('start_date'); $endDate = get_field('end_date'); if (!empty($endDate)) : ?> a <?=$endDate;?><?php endif; ?>
         </h3>
       </div>
     </div>
